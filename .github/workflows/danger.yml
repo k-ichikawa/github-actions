@@ -25,7 +25,7 @@ jobs:
         key: ${{ runner.os }}-gems-${{ hashFiles('.github/Gemfile') }} # change your gemfile path
         restore-keys: |
           ${{ runner.os }}-gems-
-    - uses: MeilCli/danger-action@v5
+    - uses: MeilCli/danger-action@v5.0.1
       with:
         plugins_file: '.github/Gemfile'
         install_path: 'vendor/bundle'
