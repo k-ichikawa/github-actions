@@ -19,11 +19,10 @@ jobs:
     - uses: actions/setup-ruby@v1
       with:
         ruby-version: '2.6'
-    - run: gem environment  
     - uses: actions/cache@v1
       with:
         path: vendor/bundle
-        key: ${{ runner.os }}-gems-${{ hashFiles('.github/Gemfile') }} # change your gemfile path
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }} # change your gemfile path
         restore-keys: |
           ${{ runner.os }}-gems-
     - uses: MeilCli/danger-action@v5.0.1
